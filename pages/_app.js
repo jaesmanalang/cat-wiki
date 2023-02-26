@@ -1,8 +1,8 @@
 import '../styles/globals.css';
-import { Inter } from '@next/font/google';
+import { Montserrat } from '@next/font/google';
 import Header from '@components/Header';
 
-const inter = Inter({
+const montserrat = Montserrat({
   subsets: ['latin'],
 });
 
@@ -12,7 +12,7 @@ export default function App({ Component, pageProps }) {
       <style jsx global>
         {`
           :root {
-            --font-inter: ${inter.style.fontFamily};
+            --font-montserrat: ${montserrat.style.fontFamily};
           }
         `}
       </style>

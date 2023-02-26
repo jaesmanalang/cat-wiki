@@ -18,10 +18,12 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ['var(--font-inter)', ...fontFamily.sans],
+        sans: ['var(--font-montserrat)', ...fontFamily.sans],
       },
       backgroundImage: {
-        'hero-cat': "url('~/public/HeroImagelg.png')",
+        'hero-cat-lg': "url('~/public/HeroImagelg.png')",
+        'hero-cat-md': "url('~/public/HeroImagemd.png')",
+        'hero-cat-sm': "url('~/public/HeroImagesm.png')",
       },
     },
   },
