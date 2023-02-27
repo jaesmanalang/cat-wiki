@@ -6,7 +6,13 @@ export default function Navbar() {
     <header className="py-6">
       <div className="container">
         <Link href="/">
-          <Image src="/logo.svg" width={128} height={43} alt="Cat Wiki" />
+          <Image
+            priority={true}
+            src="/logo.svg"
+            width={128}
+            height={43}
+            alt="Cat Wiki"
+          />
         </Link>
       </div>
     </header>
