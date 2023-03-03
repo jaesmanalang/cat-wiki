@@ -9,7 +9,7 @@ export default function Navbar() {
           <div className="relative inline-block">
             <Image
               src="/logo.svg"
-              priority={false}
+              priority={true}
               width={128}
               height={43}
               alt="Cat Wiki"

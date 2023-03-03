@@ -39,8 +39,8 @@ export default function CatDetails() {
 
   return (
     <div>
-      <div className="grid lg:grid-cols-8 lg:gap-[115px] mb-20">
-        <div className="col-span-3">
+      <div className="grid lg:grid-cols-8 grid-cols-4 lg:gap-[115px] gap-10 mb-20">
+        <div className="lg:col-span-3 sm:col-span-2 col-span-4">
           <div className="relative pb-[100%] w-full rounded-3xl">
             <Image
               className="rounded-[inherit] object-cover"
@@ -59,81 +59,85 @@ export default function CatDetails() {
             {breed.name}
           </h2>
           <div className="flex flex-col gap-8">
-            <p className="lg:text-lg font-medium mb-8">{breed.description}</p>
-            <p className="text-base font-medium">
-              <strong>Temperament:</strong> {breed.temperament}
+            <p className="lg:text-lg md:text-base text-sm font-medium mb-8">
+              {breed.description}
             </p>
-            <p className="text-base font-medium">
-              <strong>Origin:</strong> {breed.origin}
+            <p className="md:text-base text-sm font-medium">
+              <strong className="font-bold">Temperament:</strong>{' '}
+              {breed.temperament}
             </p>
-            <p className="text-base font-medium">
-              <strong>Life Span:</strong> {breed.life_span} years
+            <p className="md:text-base text-sm font-medium">
+              <strong className="font-bold">Origin:</strong> {breed.origin}
             </p>
-            <div className="flex items-center justify-between gap-7">
-              <p className="w-[30%]">
+            <p className="md:text-base text-sm font-medium">
+              <strong className="font-bold">Life Span:</strong>{' '}
+              {breed.life_span} years
+            </p>
+            <div className="flex items-center justify-between md:gap-7 gap-4">
+              <p className="md:w-[30%] w-[35%] md:text-base text-sm">
                 <strong>Adaptability:</strong>
               </p>
-              <div className="w-[70%]">
+              <div className="md:w-[70%] w-[65%]">
                 <Rating rating={breed.adaptability} />
               </div>
             </div>
 
-            <div className="flex items-center justify-between gap-7">
-              <p className="w-[30%]">
+            <div className="flex items-center justify-between md:gap-7 gap-4">
+              <p className="md:w-[30%] w-[35%] md:text-base text-sm">
                 <strong>Affection level:</strong>
               </p>
-              <div className="w-[70%]">
+              <div className="md:w-[70%] w-[65%]">
                 <Rating rating={breed.affection_level} />
               </div>
             </div>
 
-            <div className="flex items-center justify-between gap-7">
-              <p className="w-[30%]">
+            <div className="flex items-center justify-between md:gap-7 gap-4">
+              <p className="md:w-[30%] w-[35%] md:text-base text-sm">
                 <strong>Child Friendly:</strong>
               </p>
-              <div className="w-[70%]">
+              <div className="md:w-[70%] w-[65%]">
                 <Rating rating={breed.child_friendly} />
               </div>
             </div>
 
-            <div className="flex items-center justify-between gap-7">
-              <p className="w-[30%]">
+            <div className="flex items-center justify-between md:gap-7 gap-4">
+              <p className="md:w-[30%] w-[35%] md:text-base text-sm">
                 <strong>Grooming:</strong>
               </p>
-              <div className="w-[70%]">
+              <div className="md:w-[70%] w-[65%]">
                 <Rating rating={breed.grooming} />
               </div>
             </div>
 
-            <div className="flex items-center justify-between gap-7">
-              <p className="w-[30%]">
+            <div className="flex items-center justify-between md:gap-7 gap-4">
+              <p className="md:w-[30%] w-[35%] md:text-base text-sm">
                 <strong>Intelligence:</strong>
               </p>
-              <div className="w-[70%]">
+              <div className="md:w-[70%] w-[65%]">
                 <Rating rating={breed.intelligence} />
               </div>
             </div>
-            <div className="flex items-center justify-between gap-7">
-              <p className="w-[30%]">
+            <div className="flex items-center justify-between md:gap-7 gap-4">
+              <p className="md:w-[30%] w-[35%] md:text-base text-sm">
                 <strong>Health issues:</strong>
               </p>
-              <div className="w-[70%]">
+              <div className="md:w-[70%] w-[65%]">
                 <Rating rating={breed.health_issues} />
               </div>
             </div>
-            <div className="flex items-center justify-between gap-7">
-              <p className="w-[30%]">
+            <div className="flex items-center justify-between md:gap-7 gap-4">
+              <p className="md:w-[30%] w-[35%] md:text-base text-sm">
                 <strong>Social needs:</strong>
               </p>
-              <div className="w-[70%]">
+              <div className="md:w-[70%] w-[65%]">
                 <Rating rating={breed.social_needs} />
               </div>
             </div>
-            <div className="flex items-center justify-between gap-7">
-              <p className="w-[30%]">
+            <div className="flex items-center justify-between md:gap-7 gap-4">
+              <p className="md:w-[30%] w-[35%] md:text-base text-sm">
                 <strong>Stranger friendly:</strong>
               </p>
-              <div className="w-[70%]">
+              <div className="md:w-[70%] w-[65%]">
                 <Rating rating={breed.stranger_friendly} />
               </div>
             </div>
@@ -142,11 +146,11 @@ export default function CatDetails() {
       </div>
 
       <h2 className="font-semibold text-4xl mb-10">Other photos</h2>
-      <div className="grid lg:grid-cols-4 gap-11 mb-44">
+      <div className="grid lg:grid-cols-4 grid-cols-2 lg:gap-11 gap-4 mb-44">
         {otherPhotos.length > 0 &&
           otherPhotos.map((photo) => (
             <div key={photo.id} className="col-span-1">
-              <div className="w-full pb-[100%] relative rounded-3xl">
+              <div className="w-full pb-[100%] relative md:rounded-3xl rounded-xl">
                 <Image
                   className="object-cover object-top rounded-[inherit]"
                   src={photo.url}
