@@ -5,14 +5,16 @@ export default function Navbar() {
   return (
     <header className="py-6">
       <div className="container">
-        <Link href="/">
-          <Image
-            priority={true}
-            src="/logo.svg"
-            width={128}
-            height={43}
-            alt="Cat Wiki"
-          />
+        <Link href="/" scroll={false}>
+          <div className="relative inline-block">
+            <Image
+              src="/logo.svg"
+              priority={false}
+              width={128}
+              height={43}
+              alt="Cat Wiki"
+            />
+          </div>
         </Link>
       </div>
     </header>

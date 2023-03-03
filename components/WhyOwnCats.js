@@ -29,6 +29,9 @@ export default function WhyOwnCats() {
                   src="/why-1.png"
                   alt="Fluffy cat"
                   fill
+                  sizes="(min-width: 1024px) 25vw,
+                  (min-width: 766px) 33vw,
+                  75vw"
                 />
               </div>
 
@@ -38,6 +41,9 @@ export default function WhyOwnCats() {
                   src="/why-2.png"
                   alt="Fluffy cat"
                   fill
+                  sizes="(min-width: 1024px) 25vw,
+                  (min-width: 766px) 33vw,
+                  75vw"
                 />
               </div>
             </div>
@@ -48,6 +54,9 @@ export default function WhyOwnCats() {
                   src="/why-3.png"
                   alt="Fluffy cat"
                   fill
+                  sizes="(min-width: 1024px) 25vw,
+                        (min-width: 766px) 33vw,
+                        75vw"
                 />
               </div>
             </div>

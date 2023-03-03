@@ -1,6 +1,7 @@
-import { Search, ArrowRight } from 'react-feather';
+import { ArrowRight } from 'react-feather';
 import Image from 'next/image';
 import FeaturedCats from './FeaturedCats';
+import SearchForm from './SearchForm';
 
 export default function Hero() {
   return (
@@ -19,25 +20,7 @@ export default function Hero() {
             <p className="mb-4 lg:mb-12 text-white text-xs lg:text-2xl font-medium">
               Get to know about your cat breed
             </p>
-            <div className="relative">
-              <input
-                className="rounded-full w-full bg-white lg:py-5 lg:px-7 py-2 px-3 focus:outline-black text-xs lg:text-lg pr-7 lg:pr-14"
-                placeholder="Search"
-                type="text"
-              />
-              <button className="absolute top-1/2 -translate-y-1/2 lg:right-5 right-0 p-2 focus:outline-black">
-                <Search size={18} />
-              </button>
-              <div className="absolute left-0 top-20 w-full bg-white rounded-3xl px-3 pr-[6px] py-2 hidden">
-                <ul className="max-h-56 overflow-y-auto ">
-                  <li className="px-2 py-4 text-lg">American bobcat</li>
-                  <li className="px-2 py-4 text-lg">American bobcat</li>
-                  <li className="px-2 py-4 text-lg">American bobcat</li>
-                  <li className="px-2 py-4 text-lg">American bobcat</li>
-                  <li className="px-2 py-4 text-lg">American bobcat</li>
-                </ul>
-              </div>
-            </div>
+            <SearchForm />
           </div>
         </div>
       </div>

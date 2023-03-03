@@ -9,7 +9,6 @@ export default function Footer() {
           <Link href="/">
             <Image
               className="brightness-0 invert"
-              priority={true}
               src="/logo.svg"
               width={128}
               height={43}

@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import CatPhoto from '@components/CatPhoto';
 import axios from 'axios';
+import Link from 'next/link';
 
 export default function FeaturedCats() {
   const { data, isLoading, isError } = useQuery(['featuredBreeds'], () =>
@@ -23,11 +24,9 @@ export default function FeaturedCats() {
   return (
     <div className="grid lg:grid-cols-4 lg:gap-12 md:gap-8 grid-cols-2 gap-4">
       {data?.data.map((breed) => (
-        <CatPhoto
-          key={breed.id}
-          name={breed.name}
-          imageSrc={breed.image?.url}
-        />
+        <Link href={`/cats/${breed.id}`} key={breed.id}>
+          <CatPhoto name={breed.name} imageSrc={breed.image?.url} />
+        </Link>
       ))}
     </div>
   );

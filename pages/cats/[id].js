@@ -18,22 +18,20 @@ export default function CatDetails() {
   const router = useRouter();
   const { id } = router.query;
 
-  // const catQuery = useQuery({
-  //   queryKey: ['catDetails', id],
-  //   queryFn: () => fetchCatDetails(id),
-  // });
-
   const { data, isLoading, isError } = useQuery({
     queryKey: ['catImages', id],
     queryFn: () => fetchCatImages(id),
   });
 
-  const featuredCat = data?.length > 0 && data[1];
-  const breed = data?.length > 0 && data[1].breeds[0];
+  const featuredCat = data?.length > 0 && data[0];
+  const breed = data?.length > 0 && data[0].breeds[0];
+  const otherPhotos = data?.filter(
+    (catPhoto) => catPhoto.id !== featuredCat.id
+  );
 
   if (isLoading) {
     return (
-      <div className="min-h-[50vh] flex items-center justify-center">
+      <div className="min-h-[calc(100vh_-_97.5px)] flex items-center justify-center">
         <Spinner />
       </div>
     );
@@ -141,6 +139,26 @@ export default function CatDetails() {
             </div>
           </div>
         </div>
+      </div>
+
+      <h2 className="font-semibold text-4xl mb-10">Other photos</h2>
+      <div className="grid lg:grid-cols-4 gap-11 mb-44">
+        {otherPhotos.length > 0 &&
+          otherPhotos.map((photo) => (
+            <div key={photo.id} className="col-span-1">
+              <div className="w-full pb-[100%] relative rounded-3xl">
+                <Image
+                  className="object-cover object-top rounded-[inherit]"
+                  src={photo.url}
+                  fill
+                  sizes="(min-width: 1024px) 25vw,
+                          (min-width: 768px) 33vw,
+                          50vw"
+                  alt={`Image of ${breed.name}`}
+                />
+              </div>
+            </div>
+          ))}
       </div>
     </div>
   );
