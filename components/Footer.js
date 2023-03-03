@@ -12,12 +12,15 @@ export default function Footer() {
             width={128}
             height={43}
             alt="Cat Wiki"
+            priority
           />
 
           <p>
             &copy; created by{' '}
-            <Link href="http://github.com/jaesmanalang">James Manalang</Link> -
-            devChallenges.io 2023
+            <Link href="http://github.com/jaesmanalang" target="_blank">
+              James Manalang
+            </Link>{' '}
+            - devChallenges.io 2023
           </p>
         </div>
       </footer>

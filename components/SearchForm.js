@@ -39,23 +39,28 @@ export default function SearchForm() {
     setInputFocused(false);
   };
 
+  if (isError) {
+    return (
+      <div className="my-4">An error has occurred. Please try again later.</div>
+    );
+  }
+
   return (
     <div className="relative">
-      <form>
-        <input
-          ref={inputRef}
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          className="rounded-full w-full bg-white lg:py-5 lg:px-7 py-2 px-3 focus:outline-black text-xs lg:text-lg pr-7 lg:pr-14"
-          placeholder="Search"
-          type="text"
-          onFocus={(e) => setInputFocused(true)}
-          onBlur={handleBlur}
-        />
-        <button className="absolute top-1/2 -translate-y-1/2 lg:right-5 right-0 p-2 focus:outline-black">
-          <Search size={18} />
-        </button>
-      </form>
+      <input
+        ref={inputRef}
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        className="rounded-full w-full bg-white lg:py-5 lg:px-7 py-2 px-3 focus:outline-black text-xs lg:text-lg pr-7 lg:pr-14"
+        placeholder="Search"
+        type="text"
+        onFocus={(e) => setInputFocused(true)}
+        onBlur={handleBlur}
+      />
+      <button className="absolute top-1/2 -translate-y-1/2 lg:right-5 right-0 p-2 focus:outline-black">
+        <Search size={18} />
+      </button>
+
       {debouncedQuery && inputFocused && (
         <SearchResults data={data} isLoading={isLoading} />
       )}

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { ArrowRight } from 'react-feather';
 
 export default function WhyOwnCats() {
@@ -16,9 +17,15 @@ export default function WhyOwnCats() {
               calming chemicals in your body which lower your stress and anxiety
               leves
             </p>
-            <span className="uppercase font-bold md:text-lg text-xs flex items-center text-[#29150799] shrink-0 leading-loose">
-              Read More <ArrowRight className="ml-2" size={18} />
-            </span>
+
+            <Link
+              href="  https://www.helpguide.org/articles/healthy-living/joys-of-owning-a-cat.htm"
+              target="_blank"
+            >
+              <span className="uppercase font-bold md:text-lg text-xs flex items-center text-[#29150799] shrink-0 leading-loose">
+                Read More <ArrowRight className="ml-2" size={18} />
+              </span>
+            </Link>
           </div>
 
           <div className="lg:col-span-6 col-span-12 grid grid-cols-2 gap-7">

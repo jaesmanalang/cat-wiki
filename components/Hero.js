@@ -2,6 +2,7 @@ import { ArrowRight } from 'react-feather';
 import Image from 'next/image';
 import FeaturedCats from './FeaturedCats';
 import SearchForm from './SearchForm';
+import Link from 'next/link';
 
 export default function Hero() {
   return (
@@ -38,9 +39,11 @@ export default function Hero() {
             <h4 className="md:text-5xl text-lg font-bold md:max-w-lg max-w-[185px] md:mt-9 mt-4 leading-relaxed">
               66+ Breeds for you to discover
             </h4>
-            <span className="uppercase font-bold md:text-lg text-xs flex items-center text-[#29150799] shrink-0 leading-loose">
-              See more <ArrowRight className="ml-2" size={18} />
-            </span>
+            <Link href="/cats">
+              <span className="uppercase font-bold md:text-lg text-xs flex items-center text-[#29150799] shrink-0 leading-loose">
+                See more <ArrowRight className="ml-2" size={18} />
+              </span>
+            </Link>
           </div>
 
           <FeaturedCats />

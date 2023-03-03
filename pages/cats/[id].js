@@ -6,10 +6,6 @@ import Image from 'next/image';
 import Rating from '@components/Rating';
 import Spinner from '@components/Spinner';
 
-function fetchCatDetails(id) {
-  return axios.get(`/api/cats/${id}`).then((res) => res.data);
-}
-
 function fetchCatImages(id) {
   return axios.get(`/api/cats/images/${id}`).then((res) => res.data);
 }
@@ -29,10 +25,22 @@ export default function CatDetails() {
     (catPhoto) => catPhoto.id !== featuredCat.id
   );
 
+  if (isError) {
+    return <div>An error has occurred. Please try again later.</div>;
+  }
+
   if (isLoading) {
     return (
       <div className="min-h-[calc(100vh_-_97.5px)] flex items-center justify-center">
         <Spinner />
+      </div>
+    );
+  }
+
+  if (!isLoading && !data?.length > 0) {
+    return (
+      <div>
+        <h1 className="font-bold text-4xl">Cat not found</h1>
       </div>
     );
   }
