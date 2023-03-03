@@ -7,10 +7,10 @@ export default function CatPhoto({ name, imageSrc }) {
 
   return (
     <div>
-      <div className="pb-[100%] w-full relative overflow-hidden rounded-3xl">
+      <div className="pb-[100%] w-full relative lg:rounded-3xl rounded-xl">
         <Image
           src={imageSrc}
-          className="object-cover"
+          className="object-cover rounded-[inherit]"
           fill
           sizes="100vw, (min-width: 768px) 50vw, (min-width: 1024px) 25vw"
           alt={name}

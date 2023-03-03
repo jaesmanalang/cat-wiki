@@ -11,7 +11,7 @@ export default function WhyOwnCats() {
               <span className="absolute -top-4 left-0 h-[3px] rounded-full bg-[#4D270C] md:w-[60px] w-[41px]" />
               Why should you have a cat?
             </h2>
-            <p className="text-lg mb-11">
+            <p className="text-lg lg:mb-11 mb-6 font-medium">
               Having a cat around you can actually trigger the release of
               calming chemicals in your body which lower your stress and anxiety
               leves

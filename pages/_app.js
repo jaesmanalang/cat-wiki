@@ -1,6 +1,6 @@
 import '../styles/globals.css';
 import { Montserrat } from '@next/font/google';
-import Header from '@components/Header';
+import Layout from '@components/Layout';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
 
@@ -21,8 +21,9 @@ export default function App({ Component, pageProps }) {
         `}
       </style>
       <QueryClientProvider client={queryClient}>
-        <Header />
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
         <ReactQueryDevtools initialIsOpen={false} />
       </QueryClientProvider>
     </>

@@ -42,7 +42,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="pt-10 pb-24 bg-[#E3E1DC] px-7 rounded-b-[42px]">
+      <div className="pt-10 pb-24 bg-[#E3E1DC] lg:px-7 px-3 rounded-b-[42px]">
         <div className="max-w-5xl w-full mx-auto">
           <div className="relative py-2">
             <span className="font-medium md:text-lg text-xs">
